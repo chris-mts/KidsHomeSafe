@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blog – Safe Kids Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Practical guides for parents on YouTube safety, TikTok settings, gaming security, and building healthy tech habits at home." />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-30">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-9 h-9 rounded-2xl bg-indigo-500/90 font-bold text-lg">SK</span>
+        <span class="font-semibold text-lg">Safe Kids Home</span>
+      </a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="filters.html" class="hover:text-indigo-300">Web Filters</a>
+        <a href="device-monitoring.html" class="hover:text-indigo-300">Phones & Apps</a>
+        <a href="reviews.html" class="hover:text-indigo-300">Reviews</a>
+        <a href="services.html" class="hover:text-indigo-300">Home Setup</a>
+        <a href="blog.html" class="text-indigo-300">Blog</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 pt-10 pb-16">
+    <h1 class="text-2xl md:text-3xl font-semibold mb-2">Blog</h1>
+    <p class="text-sm text-slate-300 mb-8 max-w-2xl">
+      Short, practical articles you can act on in 10 minutes or less.
+    </p>
+
+    <div class="space-y-5 text-sm">
+      <article class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
+        <h2 class="text-lg font-semibold mb-1">How to make YouTube safer for your kids in 10 minutes</h2>
+        <p class="text-slate-300 mb-2">
+          Step-by-step: turn on Restricted Mode, block channels, set up supervised accounts, and adjust recommendations.
+        </p>
+        <p class="text-xs text-slate-500">Guide coming soon.</p>
+      </article>
+
+      <article class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
+        <h2 class="text-lg font-semibold mb-1">TikTok parental controls every parent should know</h2>
+        <p class="text-slate-300 mb-2">
+          How to use Family Pairing, content filters, DMs settings, and screen-time tools so TikTok isn’t a total free-for-all.
+        </p>
+        <p class="text-xs text-slate-500">Guide coming soon.</p>
+      </article>
+
+      <article class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
+        <h2 class="text-lg font-semibold mb-1">House rules for phones that actually work</h2>
+        <p class="text-slate-300 mb-2">
+          Simple agreements for when phones can be used, where they charge at night, and what happens if rules are broken.
+        </p>
+        <p class="text-xs text-slate-500">Guide coming soon.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 py-6 text-xs text-slate-500 mt-10">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between">
+      <p>© <span id="year"></span> Safe Kids Home.</p>
+      <a href="index.html" class="hover:text-indigo-300">Back to home</a>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
