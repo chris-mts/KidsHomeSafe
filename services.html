@@ -37,7 +37,7 @@
         <ul class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 space-y-2 list-disc list-inside text-slate-300">
           <li>Install and configure family-safe web filters</li>
           <li>Lock down your home Wi-Fi and guest networks</li>
-          <li>Set up Apple Screen Time & Google Family Link</li>
+          <li>Set up Apple Screen Time &amp; Google Family Link</li>
           <li>Install and configure Bark / Qustodio / Net Nanny</li>
           <li>Set up age-appropriate content rules and schedules</li>
         </ul>
@@ -45,7 +45,7 @@
           <li>Secure game consoles (Xbox, PlayStation, Switch)</li>
           <li>Secure smart TVs and streaming devices</li>
           <li>Help you choose safer device settings for kids</li>
-          <li>Teach you how to review activity & alerts</li>
+          <li>Teach you how to review activity &amp; alerts</li>
           <li>Provide a written summary of your setup</li>
         </ul>
       </div>
@@ -76,7 +76,7 @@
           <h3 class="font-semibold mb-1">Plus – $349</h3>
           <ul class="text-xs text-slate-300 space-y-1 list-disc list-inside">
             <li>Everything in Family package</li>
-            <li>Game consoles & smart TVs</li>
+            <li>Game consoles &amp; smart TVs</li>
             <li>Follow-up remote check-in (30 days)</li>
           </ul>
         </div>
@@ -92,35 +92,86 @@
       <p class="text-sm text-slate-300 mb-4 max-w-xl">
         Fill out this form and I’ll follow up with available times and a quick intake checklist.
       </p>
-      <!-- This is a static form; in Amplify you can hook it to email, API, or a form service -->
-      <form class="grid md:grid-cols-2 gap-4 text-sm" action="#" method="post">
+
+      <!-- Formspree-powered form -->
+      <form
+        class="grid md:grid-cols-2 gap-4 text-sm"
+        action="https://formspree.io/f/xyzapdqo"
+        method="POST"
+      >
         <div class="space-y-1">
           <label class="block text-xs text-slate-300">Name</label>
-          <input type="text" name="name" class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm" required />
+          <input
+            type="text"
+            name="name"
+            class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
+            required
+          />
         </div>
+
         <div class="space-y-1">
           <label class="block text-xs text-slate-300">Email</label>
-          <input type="email" name="email" class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm" required />
+          <input
+            type="email"
+            name="email"
+            class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
+            required
+          />
         </div>
+
         <div class="space-y-1">
           <label class="block text-xs text-slate-300">City / Area</label>
-          <input type="text" name="city" class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm" placeholder="Lee’s Summit, MO" />
+          <input
+            type="text"
+            name="city"
+            class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
+            placeholder="Lee’s Summit, MO"
+          />
         </div>
+
         <div class="space-y-1">
           <label class="block text-xs text-slate-300">Number of kid devices</label>
-          <input type="number" name="devices" min="1" class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm" />
+          <input
+            type="number"
+            name="devices"
+            min="1"
+            class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
+          />
         </div>
+
         <div class="md:col-span-2 space-y-1">
           <label class="block text-xs text-slate-300">What are your biggest concerns?</label>
-          <textarea name="concerns" rows="4" class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
-            placeholder="Example: TikTok, YouTube, gaming, online friends, late-night phone use..."></textarea>
+          <textarea
+            name="concerns"
+            rows="4"
+            class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
+            placeholder="Example: TikTok, YouTube, gaming, online friends, late-night phone use..."
+          ></textarea>
         </div>
+
+        <!-- Hidden fields for Formspree -->
+        <input
+          type="hidden"
+          name="_subject"
+          value="New Home Internet Safety Request from Safe Kids Home"
+        />
+        <!-- Optional redirect after submit; create a thank-you.html later and uncomment this
+        <input
+          type="hidden"
+          name="_redirect"
+          value="https://your-domain.com/thank-you.html"
+        />
+        -->
+
         <div class="md:col-span-2">
-          <button type="submit" class="px-5 py-2.5 rounded-full bg-indigo-500 hover:bg-indigo-400 text-sm font-medium">
+          <button
+            type="submit"
+            class="px-5 py-2.5 rounded-full bg-indigo-500 hover:bg-indigo-400 text-sm font-medium"
+          >
             Submit request
           </button>
           <p class="text-xs text-slate-500 mt-2">
-            This is a demo form. You can connect it to an email service, AWS Lambda, or a form provider (Formspree, Getform, etc.).
+            Your request will be securely sent and you’ll receive a follow-up at the email address you provided.
           </p>
         </div>
       </form>
