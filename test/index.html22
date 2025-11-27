@@ -13,6 +13,7 @@
     <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <!-- Brand / Logo -->
       <a href="index.html" class="flex items-center gap-3">
+        <!-- Make sure assets/logo.png exists in your project -->
         <img src="assets/logo.png" alt="Kids Home Safe Logo" class="h-10 w-10 object-contain" />
         <span class="font-semibold text-lg">Kids Home Safe</span>
       </a>
@@ -41,12 +42,7 @@
           and secure your home Wi-Fi so your kids can explore the internet more safely.
         </p>
         <div class="flex flex-wrap gap-4 mb-6">
-          <!-- Hero button now downloads the checklist -->
-          <a
-            href="assets/KHS-checklist.pdf"
-            download="Kids-Home-Safe-Internet-Safety-Checklist.pdf"
-            class="px-5 py-2.5 rounded-full bg-indigo-500 hover:bg-indigo-400 text-sm font-medium"
-          >
+          <a href="#cta" class="px-5 py-2.5 rounded-full bg-indigo-500 hover:bg-indigo-400 text-sm font-medium">
             Start with the free safety checklist
           </a>
           <a href="filters.html" class="px-5 py-2.5 rounded-full border border-slate-700 hover:border-indigo-400 text-sm">
@@ -55,7 +51,7 @@
         </div>
         <div class="flex items-center gap-3 text-xs text-slate-400">
           <span class="inline-flex w-2 h-2 rounded-full bg-emerald-400"></span>
-          <span>Created by parents + IT security professionals.</span>
+          <span>Created by a parents + IT security professionals.</span>
         </div>
       </div>
       <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 md:p-8">
@@ -112,12 +108,8 @@
             web filters, device settings, Wi-Fi security, and family rules.
           </p>
         </div>
-        <!-- CTA button now downloads the checklist -->
-        <a
-          href="assets/KHS-checklist.pdf"
-          download="Kids-Home-Safe-Internet-Safety-Checklist.pdf"
-          class="px-6 py-3 rounded-full bg-slate-950 text-sm font-semibold hover:bg-slate-900"
-        >
+        <a href="#"
+           class="px-6 py-3 rounded-full bg-slate-950 text-sm font-semibold hover:bg-slate-900">
           Get the free checklist (PDF)
         </a>
       </div>
