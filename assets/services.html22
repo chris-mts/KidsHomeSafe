@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home Internet Safety Setup – Kids Home Safe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Done-for-you home internet safety setup in the Kansas City area – web filters, Wi-Fi security, kids’ device controls, and ongoing support." />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-30">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Kids Home Safe Logo" class="h-10 w-10 object-contain" />
+        <span class="font-semibold text-lg">Kids Home Safe</span>
+      </a>
+      <div class="flex items-center gap-8 text-sm font-medium">
+        <a href="filters.html" class="hover:text-indigo-300">Web Filters</a>
+        <a href="safe.html" class="hover:text-indigo-300">Safe Browsing</a>
+        <a href="device-monitoring.html" class="hover:text-indigo-300">Phones &amp; Apps</a>
+        <a href="services.html" class="text-indigo-300 font-semibold">Home Setup</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 pt-10 pb-16">
+    <h1 class="text-2xl md:text-3xl font-semibold mb-2">Done-for-you home internet safety setup</h1>
+    <p class="text-sm text-slate-300 mb-6 max-w-2xl">
+      If you’re in the <strong>Lee’s Summit / Kansas City area</strong>, I can come to your home and set everything up for you:
+      web filters, Wi-Fi security, device controls, and more — so you don’t have to wrestle with the tech.
+    </p>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">What I can handle for you</h2>
+      <div class="grid md:grid-cols-2 gap-5 text-sm">
+        <ul class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 space-y-2 list-disc list-inside text-slate-300">
+          <li>Install and configure family-safe web filters</li>
+          <li>Lock down your home Wi-Fi and guest networks</li>
+          <li>Set up Apple Screen Time &amp; Google Family Link</li>
+          <li>Install and configure Bark / Qustodio / Net Nanny</li>
+          <li>Set up age-appropriate content rules and schedules</li>
+        </ul>
+        <ul class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 space-y-2 list-disc list-inside text-slate-300">
+          <li>Secure game consoles (Xbox, PlayStation, Switch)</li>
+          <li>Secure smart TVs and streaming devices</li>
+          <li>Help you choose safer device settings for kids</li>
+          <li>Teach you how to review activity &amp; alerts</li>
+          <li>Provide a written summary of your setup</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">Flat-fee packages</h2>
+      <div class="grid md:grid-cols-3 gap-5 text-sm">
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
+          <h3 class="font-semibold mb-1">Starter – $179</h3>
+          <ul class="text-xs text-slate-300 space-y-1 list-disc list-inside">
+            <li>1–2 kid devices</li>
+            <li>Basic web filter setup</li>
+            <li>Simple Wi-Fi security check</li>
+            <li>30-minute walkthrough</li>
+          </ul>
+        </div>
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 border-indigo-500/70">
+          <h3 class="font-semibold mb-1">Family – $279</h3>
+          <ul class="text-xs text-slate-300 space-y-1 list-disc list-inside">
+            <li>Up to 5 kid devices</li>
+            <li>Web filter + router lockdown</li>
+            <li>Screen-time and app controls</li>
+            <li>Written setup summary</li>
+          </ul>
+        </div>
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
+          <h3 class="font-semibold mb-1">Plus – $349</h3>
+          <ul class="text-xs text-slate-300 space-y-1 list-disc list-inside">
+            <li>Everything in Family package</li>
+            <li>Game consoles &amp; smart TVs</li>
+            <li>Follow-up remote check-in (30 days)</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-xs text-slate-500 mt-3">
+        Pricing is example only. Adjust to match your time and travel costs.
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5">
+      <h2 class="text-xl font-semibold mb-2">Request a home visit</h2>
+      <p class="text-sm text-slate-300 mb-4 max-w-xl">
+        Fill out this form and I’ll follow up with available times and a quick intake checklist.
+      </p>
+
+      <!-- Formspree-powered form -->
+      <form
+        class="grid md:grid-cols-2 gap-4 text-sm"
+        action="https://formspree.io/f/xyzapdqo"
+        method="POST"
+      >
+        <div class="space-y-1">
+          <label class="block text-xs text-slate-300">Name</label>
+          <input
+            type="text"
+            name="name"
+            class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
+            required
+          />
+        </div>
+
+        <div class="space-y-1">
+          <label class="block text-xs text-slate-300">Email</label>
+          <input
+            type="email"
+            name="email"
+            class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
+            required
+          />
+        </div>
+
+        <div class="space-y-1">
+          <label class="block text-xs text-slate-300">City / Area</label>
+          <input
+            type="text"
+            name="city"
+            class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
+            placeholder="Lee’s Summit, MO"
+          />
+        </div>
+
+        <div class="space-y-1">
+          <label class="block text-xs text-slate-300">Number of kid devices</label>
+          <input
+            type="number"
+            name="devices"
+            min="1"
+            class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
+          />
+        </div>
+
+        <div class="md:col-span-2 space-y-1">
+          <label class="block text-xs text-slate-300">What are your biggest concerns?</label>
+          <textarea
+            name="concerns"
+            rows="4"
+            class="w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
+            placeholder="Example: TikTok, YouTube, gaming, online friends, late-night phone use..."
+          ></textarea>
+        </div>
+
+        <!-- Hidden fields for Formspree -->
+        <input
+          type="hidden"
+          name="_subject"
+          value="New Home Internet Safety Request from Kids Home Safe"
+        />
+        <!-- Optional redirect after submit; create a thank-you.html later and uncomment this
+        <input
+          type="hidden"
+          name="_redirect"
+          value="https://your-domain.com/thank-you.html"
+        />
+        -->
+
+        <div class="md:col-span-2">
+          <button
+            type="submit"
+            class="px-5 py-2.5 rounded-full bg-indigo-500 hover:bg-indigo-400 text-sm font-medium"
+          >
+            Submit request
+          </button>
+          <p class="text-xs text-slate-500 mt-2">
+            Your request will be securely sent and you’ll receive a follow-up at the email address you provided.
+          </p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800 py-6 text-xs text-slate-500 mt-10">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between">
+      <p>© <span id="year"></span> Kids Home Safe.</p>
+      <a href="index.html" class="hover:text-indigo-300">Back to home</a>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>
