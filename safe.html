@@ -1,264 +1,318 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <title>Safe Browsing Sites for Kids – Kids Home Safe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A curated list of parent-approved, safe, and educational websites for kids aged 3-12+. vetted by Kids Home Safe." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-950 text-slate-100">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6', // Trust Blue
+              600: '#2563eb',
+              900: '#1e3a8a',
+            },
+            accent: {
+              500: '#10b981', // Safety Green
+            }
+          }
+        }
+      }
+    }
+  </script>
 
-  <!-- NAVBAR -->
-  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-30">
-    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+  <style>
+    .mobile-menu {
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+    .mobile-menu.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-700 font-sans antialiased selection:bg-brand-100 selection:text-brand-900">
+
+  <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-slate-200 z-50">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
       
-      <!-- Brand -->
-      <a href="index.html" class="flex items-center gap-3">
+      <a href="index.html" class="flex items-center gap-3 group">
         <img src="assets/logo.png" alt="Kids Home Safe Logo" class="h-10 w-10 object-contain" />
-        <span class="font-semibold text-lg">Kids Home Safe</span>
+        <span class="font-bold text-slate-900 text-lg tracking-tight">Kids Home Safe</span>
       </a>
 
-      <!-- Nav Links -->
-      <div class="flex items-center gap-8 text-sm font-medium">
-        <a href="filters.html" class="hover:text-indigo-300">Web Filters</a>
-        <a href="kids-safe-browsing.html" class="hover:text-indigo-300 text-indigo-300 font-semibold">Safe Browsing</a>
-        <a href="device-monitoring.html" class="hover:text-indigo-300">Phones &amp; Apps</a>
-        <a href="services.html" class="hover:text-indigo-300">Home Setup</a>
-      </div>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="filters.html" class="hover:text-brand-600 transition-colors">Web Filters</a>
+        <a href="safe.html" class="text-brand-600 font-semibold">Safe Browsing</a>
+        <a href="device-monitoring.html" class="hover:text-brand-600 transition-colors">Phones & Apps</a>
+        <a href="services.html" class="hover:text-brand-600 transition-colors">Home Setup</a>
+        <a href="services.html#contact" class="px-4 py-2 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition shadow-sm">
+          Book a Visit
+        </a>
+      </nav>
 
-    </nav>
+      <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-white border-b border-slate-200 p-4 shadow-xl md:hidden flex flex-col gap-4 text-center">
+      <a href="filters.html" class="block py-2 text-slate-600 font-medium">Web Filters</a>
+      <a href="safe.html" class="block py-2 text-brand-600 font-semibold">Safe Browsing</a>
+      <a href="device-monitoring.html" class="block py-2 text-slate-600 font-medium">Phones & Apps</a>
+      <a href="services.html" class="block py-2 text-slate-600 font-medium">Home Setup</a>
+      <a href="services.html#contact" class="block py-3 bg-brand-50 text-brand-700 font-semibold rounded-xl">Book a Visit</a>
+    </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 pt-10 pb-16">
-    <h1 class="text-3xl font-semibold mb-3">Safe Browsing Sites for Kids</h1>
-    <p class="text-slate-300 mb-8 max-w-2xl">
-      A curated list of parent-approved, safe, and educational websites for younger kids and older kids (10+). These
-      are great starting points when you want your child online, but only in places that are designed for them.
-    </p>
+  <main class="pt-24 md:pt-32 pb-16 md:pb-24">
+    
+    <section class="max-w-4xl mx-auto px-4 md:px-6 text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-600 text-xs font-bold uppercase tracking-wide mb-4">
+        Curated Resources
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
+        Safe browsing sites for kids
+      </h1>
+      <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+        A curated list of parent-approved, safe, and educational websites. 
+        Great starting points when you want your child online, but only in places designed for them.
+      </p>
+    </section>
 
-    <!-- AGES 3–9 -->
-    <section class="mb-14">
-      <h2 class="text-2xl font-semibold mb-4">Safe Sites for Ages 3–9</h2>
-      <p class="text-xs text-slate-400 mb-4">
-        Best for preschool and elementary ages. Focused on early learning,
-        reading, basic math, and gentle shows.
+    <section class="max-w-6xl mx-auto px-4 md:px-6 mb-20">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="h-px bg-slate-200 flex-1"></div>
+        <h2 class="text-2xl font-bold text-slate-900">Ages 3–9</h2>
+        <div class="h-px bg-slate-200 flex-1"></div>
+      </div>
+      
+      <p class="text-center text-slate-500 mb-10 max-w-xl mx-auto">
+        Best for preschool and elementary ages. Focused on early learning, reading, basic math, and gentle shows.
       </p>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         
-        <!-- ABCmouse -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
-          <div class="flex justify-center mb-2">
-            <span class="px-2 py-0.5 rounded-full bg-indigo-500/20 text-[10px] font-semibold tracking-wide text-indigo-300 uppercase">
-              Early learning
-            </span>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <div class="flex justify-center mb-6">
+            <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-[10px] font-bold tracking-wide uppercase">Early Learning</span>
           </div>
-          <img src="assets/abcmouse.png" class="h-16 mx-auto mb-3 object-contain" alt="ABCmouse" />
-          <h3 class="font-semibold mb-1 text-center">ABCmouse</h3>
-          <p class="text-slate-300 mb-3 text-center">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="assets/abcmouse.png" class="max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" alt="ABCmouse" />
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2 text-center">ABCmouse</h3>
+          <p class="text-sm text-slate-500 mb-6 text-center leading-relaxed">
             Full early-learning program for reading, math, science, and art. Ad-free and structured.
           </p>
-          <a href="https://www.abcmouse.com" class="mt-auto text-indigo-300 text-xs underline block text-center">
-            Visit ABCmouse
+          <a href="https://www.abcmouse.com" target="_blank" class="mt-auto inline-flex justify-center items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Visit Website &rarr;
           </a>
         </div>
 
-        <!-- PBS Kids -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
-          <div class="flex justify-center mb-2">
-            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-[10px] font-semibold tracking-wide text-emerald-300 uppercase">
-              Shows &amp; games
-            </span>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <div class="flex justify-center mb-6">
+            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-bold tracking-wide uppercase">Shows & Games</span>
           </div>
-          <img src="assets/pbskids.png" class="h-16 mx-auto mb-3 object-contain" alt="PBS Kids" />
-          <h3 class="font-semibold mb-1 text-center">PBS Kids</h3>
-          <p class="text-slate-300 mb-3 text-center">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="assets/pbskids.png" class="max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" alt="PBS Kids" />
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2 text-center">PBS Kids</h3>
+          <p class="text-sm text-slate-500 mb-6 text-center leading-relaxed">
             Games and videos from trusted PBS Kids shows like Wild Kratts and Daniel Tiger.
           </p>
-          <a href="https://pbskids.org" class="mt-auto text-indigo-300 text-xs underline block text-center">
-            Visit PBS Kids
+          <a href="https://pbskids.org" target="_blank" class="mt-auto inline-flex justify-center items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Visit Website &rarr;
           </a>
         </div>
 
-        <!-- National Geographic Kids -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
-          <div class="flex justify-center mb-2">
-            <span class="px-2 py-0.5 rounded-full bg-sky-500/20 text-[10px] font-semibold tracking-wide text-sky-300 uppercase">
-              Science &amp; nature
-            </span>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <div class="flex justify-center mb-6">
+            <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-600 text-[10px] font-bold tracking-wide uppercase">Science & Nature</span>
           </div>
-          <img src="assets/natgeokids.png" class="h-16 mx-auto mb-3 object-contain" alt="NatGeo Kids" />
-          <h3 class="font-semibold mb-1 text-center">National Geographic Kids</h3>
-          <p class="text-slate-300 mb-3 text-center">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="assets/natgeokids.png" class="max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" alt="NatGeo Kids" />
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2 text-center">National Geographic Kids</h3>
+          <p class="text-sm text-slate-500 mb-6 text-center leading-relaxed">
             Animal facts, science videos, quizzes, and geography fun.
           </p>
-          <a href="https://kids.nationalgeographic.com" class="mt-auto text-indigo-300 text-xs underline block text-center">
-            Visit NatGeo Kids
+          <a href="https://kids.nationalgeographic.com" target="_blank" class="mt-auto inline-flex justify-center items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Visit Website &rarr;
           </a>
         </div>
 
-        <!-- Starfall -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
-          <div class="flex justify-center mb-2">
-            <span class="px-2 py-0.5 rounded-full bg-pink-500/20 text-[10px] font-semibold tracking-wide text-pink-300 uppercase">
-              Reading
-            </span>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <div class="flex justify-center mb-6">
+            <span class="px-3 py-1 rounded-full bg-pink-50 text-pink-600 text-[10px] font-bold tracking-wide uppercase">Reading</span>
           </div>
-          <img src="assets/starfall.png" class="h-16 mx-auto mb-3 object-contain" alt="Starfall" />
-          <h3 class="font-semibold mb-1 text-center">Starfall</h3>
-          <p class="text-slate-300 mb-3 text-center">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="assets/starfall.png" class="max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" alt="Starfall" />
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2 text-center">Starfall</h3>
+          <p class="text-sm text-slate-500 mb-6 text-center leading-relaxed">
             Reading and phonics activities perfect for early learners.
           </p>
-          <a href="https://www.starfall.com" class="mt-auto text-indigo-300 text-xs underline block text-center">
-            Visit Starfall
+          <a href="https://www.starfall.com" target="_blank" class="mt-auto inline-flex justify-center items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Visit Website &rarr;
           </a>
         </div>
 
-        <!-- FunBrain -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
-          <div class="flex justify-center mb-2">
-            <span class="px-2 py-0.5 rounded-full bg-amber-500/20 text-[10px] font-semibold tracking-wide text-amber-300 uppercase">
-              Math &amp; reading
-            </span>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <div class="flex justify-center mb-6">
+            <span class="px-3 py-1 rounded-full bg-orange-50 text-orange-600 text-[10px] font-bold tracking-wide uppercase">Math & Reading</span>
           </div>
-          <img src="assets/funbrain.png" class="h-16 mx-auto mb-3 object-contain" alt="FunBrain" />
-          <h3 class="font-semibold mb-1 text-center">FunBrain</h3>
-          <p class="text-slate-300 mb-3 text-center">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="assets/funbrain.png" class="max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" alt="FunBrain" />
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2 text-center">FunBrain</h3>
+          <p class="text-sm text-slate-500 mb-6 text-center leading-relaxed">
             Math, reading, and logic games trusted by schools.
           </p>
-          <a href="https://www.funbrain.com" class="mt-auto text-indigo-300 text-xs underline block text-center">
-            Visit FunBrain
+          <a href="https://www.funbrain.com" target="_blank" class="mt-auto inline-flex justify-center items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Visit Website &rarr;
           </a>
         </div>
 
-        <!-- Sesame Street -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
-          <div class="flex justify-center mb-2">
-            <span class="px-2 py-0.5 rounded-full bg-rose-500/20 text-[10px] font-semibold tracking-wide text-rose-300 uppercase">
-              Early learning
-            </span>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <div class="flex justify-center mb-6">
+            <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-bold tracking-wide uppercase">Early Learning</span>
           </div>
-          <img src="assets/sesame.png" class="h-16 mx-auto mb-3 object-contain" alt="Sesame Street" />
-          <h3 class="font-semibold mb-1 text-center">Sesame Street</h3>
-          <p class="text-slate-300 mb-3 text-center">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="assets/sesame.png" class="max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" alt="Sesame Street" />
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2 text-center">Sesame Street</h3>
+          <p class="text-sm text-slate-500 mb-6 text-center leading-relaxed">
             Videos and games with gentle learning and social-emotional themes.
           </p>
-          <a href="https://www.sesamestreet.org" class="mt-auto text-indigo-300 text-xs underline block text-center">
-            Visit Sesame Street
+          <a href="https://www.sesamestreet.org" target="_blank" class="mt-auto inline-flex justify-center items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Visit Website &rarr;
           </a>
         </div>
-
       </div>
     </section>
 
-    <!-- AGES 10+ -->
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">Safe Sites for Ages 10+</h2>
-      <p class="text-xs text-slate-400 mb-4">
+    <section class="max-w-6xl mx-auto px-4 md:px-6 mb-20">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="h-px bg-slate-200 flex-1"></div>
+        <h2 class="text-2xl font-bold text-slate-900">Ages 10+</h2>
+        <div class="h-px bg-slate-200 flex-1"></div>
+      </div>
+      
+      <p class="text-center text-slate-500 mb-10 max-w-xl mx-auto">
         Great for older elementary, middle school, and early teens. Focused on school support, coding, science, and creativity.
       </p>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
-
-        <!-- Khan Academy -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
-          <div class="flex justify-center mb-2">
-            <span class="px-2 py-0.5 rounded-full bg-indigo-500/20 text-[10px] font-semibold tracking-wide text-indigo-300 uppercase">
-              School help
-            </span>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <div class="flex justify-center mb-6">
+            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-bold tracking-wide uppercase">School Help</span>
           </div>
-          <img src="assets/khan.png" class="h-16 mx-auto mb-3 object-contain" alt="Khan Academy" />
-          <h3 class="font-semibold mb-1 text-center">Khan Academy</h3>
-          <p class="text-slate-300 mb-3 text-center">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="assets/khan.png" class="max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" alt="Khan Academy" />
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2 text-center">Khan Academy</h3>
+          <p class="text-sm text-slate-500 mb-6 text-center leading-relaxed">
             Free learning in math, science, history and more. Great for homework support.
           </p>
-          <a href="https://www.khanacademy.org" class="mt-auto text-indigo-300 text-xs underline block text-center">
-            Visit Khan Academy
+          <a href="https://www.khanacademy.org" target="_blank" class="mt-auto inline-flex justify-center items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Visit Website &rarr;
           </a>
         </div>
 
-        <!-- Codecademy -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
-          <div class="flex justify-center mb-2">
-            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-[10px] font-semibold tracking-wide text-emerald-300 uppercase">
-              Coding
-            </span>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <div class="flex justify-center mb-6">
+            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[10px] font-bold tracking-wide uppercase">Coding</span>
           </div>
-          <img src="assets/codecademy.png" class="h-16 mx-auto mb-3 object-contain" alt="Codecademy" />
-          <h3 class="font-semibold mb-1 text-center">Codecademy</h3>
-          <p class="text-slate-300 mb-3 text-center">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="assets/codecademy.png" class="max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" alt="Codecademy" />
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2 text-center">Codecademy</h3>
+          <p class="text-sm text-slate-500 mb-6 text-center leading-relaxed">
             Beginner-friendly coding lessons. Best with a parent nearby to help choose courses.
           </p>
-          <a href="https://www.codecademy.com" class="mt-auto text-indigo-300 text-xs underline block text-center">
-            Visit Codecademy
+          <a href="https://www.codecademy.com" target="_blank" class="mt-auto inline-flex justify-center items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Visit Website &rarr;
           </a>
         </div>
 
-        <!-- NASA Kids -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
-          <div class="flex justify-center mb-2">
-            <span class="px-2 py-0.5 rounded-full bg-sky-500/20 text-[10px] font-semibold tracking-wide text-sky-300 uppercase">
-              Space &amp; science
-            </span>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <div class="flex justify-center mb-6">
+            <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-bold tracking-wide uppercase">Space & Science</span>
           </div>
-          <img src="assets/nasa.png" class="h-16 mx-auto mb-3 object-contain" alt="NASA Kids Club" />
-          <h3 class="font-semibold mb-1 text-center">NASA Kids Club</h3>
-          <p class="text-slate-300 mb-3 text-center">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="assets/nasa.png" class="max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" alt="NASA Kids" />
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2 text-center">NASA Kids Club</h3>
+          <p class="text-sm text-slate-500 mb-6 text-center leading-relaxed">
             Games, missions, and activities from NASA for space-loving kids.
           </p>
-          <a href="https://www.nasa.gov/kidsclub/index.html" class="mt-auto text-indigo-300 text-xs underline block text-center">
-            Visit NASA Kids Club
+          <a href="https://www.nasa.gov/kidsclub/index.html" target="_blank" class="mt-auto inline-flex justify-center items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Visit Website &rarr;
           </a>
         </div>
 
-        <!-- FunBrain (10+) -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
-          <div class="flex justify-center mb-2">
-            <span class="px-2 py-0.5 rounded-full bg-amber-500/20 text-[10px] font-semibold tracking-wide text-amber-300 uppercase">
-              Math &amp; logic
-            </span>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <div class="flex justify-center mb-6">
+            <span class="px-3 py-1 rounded-full bg-orange-50 text-orange-600 text-[10px] font-bold tracking-wide uppercase">Math & Logic</span>
           </div>
-          <img src="assets/funbrain.png" class="h-16 mx-auto mb-3 object-contain" alt="FunBrain" />
-          <h3 class="font-semibold mb-1 text-center">FunBrain (10+)</h3>
-          <p class="text-slate-300 mb-3 text-center">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="assets/funbrain.png" class="max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" alt="FunBrain" />
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2 text-center">FunBrain (10+)</h3>
+          <p class="text-sm text-slate-500 mb-6 text-center leading-relaxed">
             Logic puzzles, math games, and interactive books for older kids.
           </p>
-          <a href="https://www.funbrain.com" class="mt-auto text-indigo-300 text-xs underline block text-center">
-            Visit FunBrain
+          <a href="https://www.funbrain.com" target="_blank" class="mt-auto inline-flex justify-center items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Visit Website &rarr;
           </a>
         </div>
 
-        <!-- SwitchZoo -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
-          <div class="flex justify-center mb-2">
-            <span class="px-2 py-0.5 rounded-full bg-lime-500/20 text-[10px] font-semibold tracking-wide text-lime-300 uppercase">
-              Science &amp; creativity
-            </span>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <div class="flex justify-center mb-6">
+            <span class="px-3 py-1 rounded-full bg-lime-50 text-lime-600 text-[10px] font-bold tracking-wide uppercase">Science</span>
           </div>
-          <img src="assets/switchzoo.png" class="h-16 mx-auto mb-3 object-contain" alt="SwitchZoo" />
-          <h3 class="font-semibold mb-1 text-center">SwitchZoo</h3>
-          <p class="text-slate-300 mb-3 text-center">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="assets/switchzoo.png" class="max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" alt="SwitchZoo" />
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2 text-center">SwitchZoo</h3>
+          <p class="text-sm text-slate-500 mb-6 text-center leading-relaxed">
             Create animals, explore habitats, and learn biology in a playful way.
           </p>
-          <a href="https://www.switchzoo.com" class="mt-auto text-indigo-300 text-xs underline block text-center">
-            Visit SwitchZoo
+          <a href="https://www.switchzoo.com" target="_blank" class="mt-auto inline-flex justify-center items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Visit Website &rarr;
           </a>
         </div>
 
-        <!-- Highlights Kids -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col">
-          <div class="flex justify-center mb-2">
-            <span class="px-2 py-0.5 rounded-full bg-rose-500/20 text-[10px] font-semibold tracking-wide text-rose-300 uppercase">
-              Reading &amp; creativity
-            </span>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 flex flex-col group">
+          <div class="flex justify-center mb-6">
+            <span class="px-3 py-1 rounded-full bg-red-50 text-red-600 text-[10px] font-bold tracking-wide uppercase">Creativity</span>
           </div>
-          <img src="assets/highlights.png" class="h-16 mx-auto mb-3 object-contain" alt="Highlights Kids" />
-          <h3 class="font-semibold mb-1 text-center">Highlights Kids</h3>
-          <p class="text-slate-300 mb-3 text-center">
+          <div class="h-16 flex items-center justify-center mb-4">
+            <img src="assets/highlights.png" class="max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" alt="Highlights" />
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2 text-center">Highlights Kids</h3>
+          <p class="text-sm text-slate-500 mb-6 text-center leading-relaxed">
             Jokes, stories, crafts, and games from the classic Highlights magazine.
           </p>
-          <a href="https://www.highlightskids.com" class="mt-auto text-indigo-300 text-xs underline block text-center">
-            Visit Highlights Kids
+          <a href="https://www.highlightskids.com" target="_blank" class="mt-auto inline-flex justify-center items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Visit Website &rarr;
           </a>
         </div>
 
@@ -266,13 +320,21 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-slate-800 py-6 text-xs text-slate-500">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-      <p>© <span id="year"></span> Kids Home Safe. All rights reserved.</p>
-      <div class="flex gap-4">
-        <a href="services.html#contact" class="hover:text-indigo-300">Contact</a>
-        <a href="#" class="hover:text-indigo-300">Privacy</a>
+  <footer class="bg-white border-t border-slate-200 py-12">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      
+      <div class="flex flex-col gap-2">
+         <a href="index.html" class="flex items-center gap-2 group">
+             <img src="assets/logo.png" alt="Kids Home Safe Logo" class="h-8 w-8 object-contain grayscale group-hover:grayscale-0 transition" />
+             <span class="font-bold text-slate-900 text-lg">Kids Home Safe</span>
+         </a>
+         <p class="text-sm text-slate-500 mt-2">© <span id="year"></span> Kids Home Safe. <br class="md:hidden">Protecting families in Kansas City & beyond.</p>
+      </div>
+
+      <div class="flex gap-8 text-sm font-medium text-slate-600">
+        <a href="index.html" class="hover:text-brand-600 transition-colors">Back to home</a>
+        <a href="services.html#contact" class="hover:text-brand-600 transition-colors">Contact</a>
+        <a href="#" class="hover:text-brand-600 transition-colors">Privacy Policy</a>
       </div>
     </div>
     <script>
@@ -280,5 +342,14 @@
     </script>
   </footer>
 
+  <script>
+    // Mobile Menu Toggle
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
