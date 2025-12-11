@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kids Home Safe – Protect Your Kids Online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Step-by-step guides, tools, and services to help parents protect their kids online – web filters, phone monitoring, app safety, and home Wi-Fi hardening." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6', // Trust Blue
+              600: '#2563eb',
+              900: '#1e3a8a',
+            },
+            accent: {
+              500: '#10b981', // Safety Green
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Smooth fade for mobile menu */
+    .mobile-menu {
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+    .mobile-menu.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-700 font-sans antialiased selection:bg-brand-100 selection:text-brand-900">
+
+  <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-slate-200 z-50">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assets/logo.png" alt="Kids Home Safe Logo" class="h-10 w-10 object-contain" />
+        <span class="font-bold text-slate-900 text-lg tracking-tight">Kids Home Safe</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="filters.html" class="hover:text-brand-600 transition-colors">Web Filters</a>
+        <a href="safe.html" class="hover:text-brand-600 transition-colors">Safe Browsing</a>
+        <a href="device-monitoring.html" class="hover:text-brand-600 transition-colors">Phones & Apps</a>
+        <a href="services.html" class="hover:text-brand-600 transition-colors">Home Setup</a>
+        <a href="#cta" class="px-4 py-2 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition shadow-sm">
+          Get Checklist
+        </a>
+      </nav>
+
+      <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-white border-b border-slate-200 p-4 shadow-xl md:hidden flex flex-col gap-4 text-center">
+      <a href="filters.html" class="block py-2 text-slate-600 font-medium">Web Filters</a>
+      <a href="safe.html" class="block py-2 text-slate-600 font-medium">Safe Browsing</a>
+      <a href="device-monitoring.html" class="block py-2 text-slate-600 font-medium">Phones & Apps</a>
+      <a href="services.html" class="block py-2 text-slate-600 font-medium">Home Setup</a>
+      <a href="#cta" class="block py-3 bg-brand-50 text-brand-700 font-semibold rounded-xl">Get Free Checklist</a>
+    </div>
+  </header>
+
+  <main class="pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden">
+    
+    <section class="max-w-6xl mx-auto px-4 md:px-6 mb-12 md:mb-20">
+       <img src="assets/kidshomesafe.png" alt="Happy kids sitting in grass with safety icons and Kids Home Safe branding text" class="w-full h-auto rounded-2xl md:rounded-[2rem] shadow-xl object-cover">
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 md:px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-600 text-xs font-bold uppercase tracking-wide mb-6">
+            <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
+            Family Cyber Safety
+          </div>
+          
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.1] mb-6">
+            Protect your kids online <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-blue-400">without the tech headache.</span>
+          </h1>
+          
+          <p class="text-lg text-slate-500 leading-relaxed mb-8">
+            Simple, step-by-step guides to block harmful content and secure devices. 
+            Created by IT professionals who are also parents.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#cta" class="inline-flex justify-center items-center px-6 py-3.5 rounded-full bg-brand-600 hover:bg-brand-700 text-white font-semibold shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5">
+              Download Safety Checklist
+            </a>
+            <a href="filters.html" class="inline-flex justify-center items-center px-6 py-3.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-brand-300 hover:text-brand-600 font-medium transition-all">
+              Browse Guides
+            </a>
+          </div>
+
+          <div class="mt-8 flex items-center gap-4 text-sm text-slate-500">
+             <div class="flex -space-x-2">
+                <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white"></div>
+                <div class="w-8 h-8 rounded-full bg-slate-400 border-2 border-white"></div>
+             </div>
+             <p>Trusted by local KC families</p>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -top-10 -right-10 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-50 mix-blend-multiply"></div>
+          <div class="absolute -bottom-10 -left-10 w-72 h-72 bg-purple-100 rounded-full blur-3xl opacity-50 mix-blend-multiply"></div>
+
+          <div class="relative bg-white rounded-3xl p-8 shadow-xl border border-slate-100">
+            <h2 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+              <svg class="w-5 h-5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              What you'll learn here
+            </h2>
+            <ul class="space-y-6">
+              <li class="flex gap-4 items-start">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-sm">1</div>
+                <div>
+                  <h3 class="font-semibold text-slate-900">Web Filters</h3>
+                  <p class="text-sm text-slate-500 mt-1">Setup guides for CleanBrowsing, OpenDNS, and more to block adult content.</p>
+                </div>
+              </li>
+              <li class="flex gap-4 items-start">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-sm">2</div>
+                <div>
+                  <h3 class="font-semibold text-slate-900">App Monitoring</h3>
+                  <p class="text-sm text-slate-500 mt-1">Master Apple Screen Time & Google Family Link to control usage.</p>
+                </div>
+              </li>
+              <li class="flex gap-4 items-start">
+                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-sm">3</div>
+                <div>
+                  <h3 class="font-semibold text-slate-900">Wi-Fi Hardening</h3>
+                  <p class="text-sm text-slate-500 mt-1">Lock down the router so tech-savvy kids can't bypass rules.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-20 border-y border-slate-100">
+      <div class="max-w-6xl mx-auto px-4 md:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold text-slate-900 mb-4">Everything you need to stay safe</h2>
+          <p class="text-slate-500">Select a category below to see our free guides.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <a href="filters.html" class="group relative bg-slate-50 rounded-3xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-slate-100">
+            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 text-xl group-hover:scale-110 transition-transform">
+              🛡️
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">Web Filters</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
+              Compare free and paid filters like CleanBrowsing and Net Nanny with clear setup guides.
+            </p>
+            <span class="inline-flex items-center text-sm font-semibold text-brand-600">
+              Read guides <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </span>
+          </a>
+
+          <a href="device-monitoring.html" class="group relative bg-slate-50 rounded-3xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-slate-100">
+            <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-6 text-xl group-hover:scale-110 transition-transform">
+              📱
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">Phones & Apps</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
+              Learn how to track location, manage screen time, and monitor risky apps on iPhone & Android.
+            </p>
+            <span class="inline-flex items-center text-sm font-semibold text-purple-600">
+              Protect devices <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </span>
+          </a>
+
+          <a href="services.html" class="group relative bg-slate-50 rounded-3xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 border border-slate-100">
+            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 text-xl group-hover:scale-110 transition-transform">
+              🏡
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">Done-for-you Setup</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
+              In the Kansas City area? Get a professional to set everything up in your home for you.
+            </p>
+            <span class="inline-flex items-center text-sm font-semibold text-emerald-600">
+              Book setup <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="py-20 max-w-6xl mx-auto px-4 md:px-6">
+      <div class="bg-slate-900 rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden text-center md:text-left">
+        <div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-slate-800 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-brand-900 rounded-full blur-3xl opacity-50"></div>
+
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div class="max-w-xl">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Get the Family Internet Safety Checklist</h2>
+            <p class="text-slate-300 text-base md:text-lg mb-0">
+              A free one-page PDF covering the 10 most important steps to secure your home. No tech skills required.
+            </p>
+          </div>
+          <div class="flex-shrink-0">
+            <a href="#" class="inline-block px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-full shadow-lg shadow-brand-500/25 transition-transform hover:-translate-y-1">
+              Download PDF Free
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 py-12">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      
+      <div class="flex flex-col gap-2">
+         <a href="index.html" class="flex items-center gap-2 group">
+             <img src="assets/logo.png" alt="Kids Home Safe Logo" class="h-8 w-8 object-contain grayscale group-hover:grayscale-0 transition" />
+             <span class="font-bold text-slate-900 text-lg">Kids Home Safe</span>
+         </a>
+         <p class="text-sm text-slate-500 mt-2">© <span id="year"></span> Kids Home Safe. <br class="md:hidden">Protecting families in Kansas City & beyond.</p>
+      </div>
+
+      <div class="flex gap-8 text-sm font-medium text-slate-600">
+        <a href="services.html#contact" class="hover:text-brand-600 transition-colors">Contact</a>
+        <a href="#" class="hover:text-brand-600 transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-brand-600 transition-colors">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Update Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
