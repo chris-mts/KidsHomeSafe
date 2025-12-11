@@ -8,13 +8,16 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-950 text-slate-100">
+  <!-- NAVBAR -->
   <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-30">
     <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Brand / Logo -->
       <a href="index.html" class="flex items-center gap-3">
         <img src="assets/logo.png" alt="Kids Home Safe Logo" class="h-10 w-10 object-contain" />
         <span class="font-semibold text-lg">Kids Home Safe</span>
       </a>
 
+      <!-- Nav links -->
       <div class="flex items-center gap-8 text-sm font-medium">
         <a href="filters.html" class="hover:text-indigo-300">Web Filters</a>
         <a href="safe.html" class="hover:text-indigo-300">Safe Browsing</a>
@@ -24,68 +27,57 @@
     </nav>
   </header>
 
+  <!-- HERO -->
   <main>
-    <section class="max-w-6xl mx-auto px-4 pt-16 pb-16 text-center">
-      
-      <div class="max-w-3xl mx-auto">
-        <p class="text-xs uppercase tracking-[0.3em] text-indigo-400 mb-4 font-bold">Family Cyber Safety</p>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6">
+    <section class="max-w-6xl mx-auto px-4 pt-10 pb-16 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-xs uppercase tracking-[0.3em] text-indigo-400 mb-3">Family Cyber Safety</p>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-5">
           Protect your kids online<br />
           <span class="text-indigo-400">without being a tech expert.</span>
         </h1>
-        <p class="text-sm md:text-lg text-slate-300 mb-8 leading-relaxed">
+        <p class="text-sm md:text-base text-slate-300 mb-6">
           Simple, step-by-step guides that help you block harmful content, monitor devices,
           and secure your home Wi-Fi so your kids can explore the internet more safely.
         </p>
-        
-        <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <div class="flex flex-wrap gap-4 mb-6">
+          <!-- Hero button now downloads the checklist -->
           <a
             href="assets/KHS-checklist.pdf"
             download="Kids-Home-Safe-Internet-Safety-Checklist.pdf"
-            class="px-6 py-3 rounded-full bg-indigo-500 hover:bg-indigo-400 text-sm font-medium transition"
+            class="px-5 py-2.5 rounded-full bg-indigo-500 hover:bg-indigo-400 text-sm font-medium"
           >
             Start with the free safety checklist
           </a>
-          <a href="filters.html" class="px-6 py-3 rounded-full border border-slate-700 hover:border-indigo-400 text-sm transition">
+          <a href="filters.html" class="px-5 py-2.5 rounded-full border border-slate-700 hover:border-indigo-400 text-sm">
             See recommended filters
           </a>
         </div>
-        
-        <div class="flex items-center justify-center gap-3 text-xs text-slate-400 mb-12">
+        <div class="flex items-center gap-3 text-xs text-slate-400">
           <span class="inline-flex w-2 h-2 rounded-full bg-emerald-400"></span>
           <span>Created by parents + IT security professionals.</span>
         </div>
       </div>
-
-      <div class="max-w-5xl mx-auto mb-16 relative">
-        <div class="absolute -inset-1 bg-indigo-500/20 blur-2xl rounded-[2rem] -z-10"></div>
-        <img 
-          src="assets/kidshomesafe.png" 
-          alt="Kids Home Safe" 
-          class="w-full rounded-[2rem] shadow-2xl border border-slate-800"
-        />
-      </div>
-
-      <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 md:p-8 max-w-3xl mx-auto text-left">
+      <div class="bg-slate-900/60 border border-slate-800 rounded-3xl p-6 md:p-8">
         <h2 class="text-lg font-semibold mb-3">What you’ll learn here</h2>
         <ul class="space-y-3 text-sm text-slate-300">
           <li class="flex gap-3">
-            <span class="mt-1 w-5 h-5 rounded-full bg-indigo-500/30 flex items-center justify-center text-xs flex-shrink-0">1</span>
+            <span class="mt-1 w-5 h-5 rounded-full bg-indigo-500/30 flex items-center justify-center text-xs">1</span>
             <span>How to set up <strong>free and paid web filters</strong> that block adult content, malware, and risky sites.</span>
           </li>
           <li class="flex gap-3">
-            <span class="mt-1 w-5 h-5 rounded-full bg-indigo-500/30 flex items-center justify-center text-xs flex-shrink-0">2</span>
+            <span class="mt-1 w-5 h-5 rounded-full bg-indigo-500/30 flex items-center justify-center text-xs">2</span>
             <span>How to use tools like <strong>Apple Screen Time, Google Family Link, and Bark</strong> to monitor apps and screen time.</span>
           </li>
           <li class="flex gap-3">
-            <span class="mt-1 w-5 h-5 rounded-full bg-indigo-500/30 flex items-center justify-center text-xs flex-shrink-0">3</span>
+            <span class="mt-1 w-5 h-5 rounded-full bg-indigo-500/30 flex items-center justify-center text-xs">3</span>
             <span>How to lock down your <strong>home Wi-Fi</strong> so kids can’t simply bypass your protections.</span>
           </li>
         </ul>
       </div>
-
     </section>
 
+    <!-- FEATURED SECTIONS -->
     <section class="max-w-6xl mx-auto px-4 pb-16 grid md:grid-cols-3 gap-6">
       <a href="filters.html" class="group bg-slate-900/70 border border-slate-800 rounded-3xl p-5 hover:border-indigo-400 transition">
         <h3 class="font-semibold mb-2 text-sm">1. Web filters</h3>
@@ -110,6 +102,7 @@
       </a>
     </section>
 
+    <!-- CTA -->
     <section id="cta" class="max-w-6xl mx-auto px-4 pb-20">
       <div class="bg-gradient-to-r from-indigo-600 to-purple-500 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
@@ -119,6 +112,7 @@
             web filters, device settings, Wi-Fi security, and family rules.
           </p>
         </div>
+        <!-- CTA button now downloads the checklist -->
         <a
           href="assets/KHS-checklist.pdf"
           download="Kids-Home-Safe-Internet-Safety-Checklist.pdf"
@@ -130,6 +124,7 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="border-t border-slate-800 py-6 text-xs text-slate-500">
     <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
       <p>© <span id="year"></span> Kids Home Safe. All rights reserved.</p>
