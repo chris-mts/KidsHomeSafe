@@ -1,167 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <title>Monitor Phones, Location & Apps – Kids Home Safe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Learn how to track your child’s phone location, manage screen time, and monitor apps using Apple Screen Time, Google Family Link, Bark, Life360 and more." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              400: '#60a5fa', // Added Lighter Blue for dark backgrounds
+              500: '#3b82f6', // Trust Blue
+              600: '#2563eb',
+              900: '#1e3a8a',
+            },
+            accent: {
+              500: '#10b981', // Safety Green
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .mobile-menu {
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+    .mobile-menu.hidden {
+      display: none;
+    }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100">
-  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-30">
-    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
+<body class="bg-slate-50 text-slate-700 font-sans antialiased selection:bg-brand-100 selection:text-brand-900">
+
+  <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-slate-200 z-50">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 group">
         <img src="assets/logo.png" alt="Kids Home Safe Logo" class="h-10 w-10 object-contain" />
-        <span class="font-semibold text-lg">Kids Home Safe</span>
+        <span class="font-bold text-slate-900 text-lg tracking-tight">Kids Home Safe</span>
       </a>
-      <div class="flex items-center gap-8 text-sm font-medium">
-        <a href="filters.html" class="hover:text-indigo-300">Web Filters</a>
-        <a href="safe.html" class="hover:text-indigo-300">Safe Browsing</a>
-        <a href="device-monitoring.html" class="text-indigo-300 font-semibold">Phones &amp; Apps</a>
-        <a href="services.html" class="hover:text-indigo-300">Home Setup</a>
-      </div>
-    </nav>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="filters.html" class="hover:text-brand-600 transition-colors">Web Filters</a>
+        <a href="safe.html" class="hover:text-brand-600 transition-colors">Safe Browsing</a>
+        <a href="device-monitoring.html" class="text-brand-600 font-semibold">Phones & Apps</a>
+        <a href="services.html" class="hover:text-brand-600 transition-colors">Home Setup</a>
+        <a href="services.html#contact" class="px-4 py-2 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition shadow-sm">
+          Book a Visit
+        </a>
+      </nav>
+
+      <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-white border-b border-slate-200 p-4 shadow-xl md:hidden flex flex-col gap-4 text-center">
+      <a href="filters.html" class="block py-2 text-slate-600 font-medium">Web Filters</a>
+      <a href="safe.html" class="block py-2 text-slate-600 font-medium">Safe Browsing</a>
+      <a href="device-monitoring.html" class="block py-2 text-brand-600 font-semibold">Phones & Apps</a>
+      <a href="services.html" class="block py-2 text-slate-600 font-medium">Home Setup</a>
+      <a href="services.html#contact" class="block py-3 bg-brand-50 text-brand-700 font-semibold rounded-xl">Book a Visit</a>
+    </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 pt-10 pb-16">
-    <h1 class="text-2xl md:text-3xl font-semibold mb-2">Monitor phones, locations &amp; apps</h1>
-    <p class="text-sm text-slate-300 mb-8 max-w-2xl">
-      You don’t need to read every single message your child sends. Instead, set up tools that
-      <strong>track screen time, app usage, and location</strong>, and send alerts when something looks wrong.
-    </p>
+  <main class="pt-24 md:pt-32 pb-16 md:pb-24">
+    
+    <section class="max-w-4xl mx-auto px-4 md:px-6 text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-600 text-xs font-bold uppercase tracking-wide mb-4">
+        Device Safety
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
+        Monitor phones, location & apps
+      </h1>
+      <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+        We believe parents shouldn't have to read every single message their child sends. Instead, set up tools that 
+        <strong class="text-slate-700">track screen time, app usage, and location</strong>, and send alerts when something looks wrong.
+      </p>
+    </section>
 
-    <!-- LOCATION -->
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-3">Location tracking</h2>
-      <div class="grid md:grid-cols-3 gap-5 text-sm">
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
-          <h3 class="font-semibold mb-1">Life360</h3>
-          <p class="text-slate-300 mb-2">
+    <section class="max-w-6xl mx-auto px-4 md:px-6 mb-20">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="h-px bg-slate-200 flex-1"></div>
+        <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <span class="text-2xl">📍</span> Location Tracking
+        </h2>
+        <div class="h-px bg-slate-200 flex-1"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 group">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="font-bold text-slate-900 text-lg">Life360</h3>
+            <span class="px-2 py-1 bg-purple-100 text-purple-700 text-[10px] font-bold uppercase rounded-md">Family Fav</span>
+          </div>
+          <p class="text-sm text-slate-500 mb-4 leading-relaxed">
             Family-location app that shows where everyone is, with driving stats and geofence alerts.
           </p>
-          <ul class="text-xs text-slate-400 list-disc list-inside">
-            <li>Real-time map</li>
-            <li>Arrival &amp; departure alerts</li>
-            <li>Driving behavior reports</li>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li class="flex gap-2 items-center"><span class="w-1.5 h-1.5 bg-brand-400 rounded-full"></span> Real-time map</li>
+            <li class="flex gap-2 items-center"><span class="w-1.5 h-1.5 bg-brand-400 rounded-full"></span> Arrival & departure alerts</li>
+            <li class="flex gap-2 items-center"><span class="w-1.5 h-1.5 bg-brand-400 rounded-full"></span> Driving behavior reports</li>
           </ul>
         </div>
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
-          <h3 class="font-semibold mb-1">Apple Find My</h3>
-          <p class="text-slate-300 mb-2">
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 group">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="font-bold text-slate-900 text-lg">Apple Find My</h3>
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase rounded-md">iOS Native</span>
+          </div>
+          <p class="text-sm text-slate-500 mb-4 leading-relaxed">
             Built into iPhones. Lets you see where your kid’s device is at any time, and play a sound if it’s lost.
           </p>
-          <ul class="text-xs text-slate-400 list-disc list-inside">
-            <li>Use the “Family Sharing” feature</li>
-            <li>Great for Apple households</li>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li class="flex gap-2 items-center"><span class="w-1.5 h-1.5 bg-slate-400 rounded-full"></span> Use "Family Sharing"</li>
+            <li class="flex gap-2 items-center"><span class="w-1.5 h-1.5 bg-slate-400 rounded-full"></span> Great for Apple households</li>
+            <li class="flex gap-2 items-center"><span class="w-1.5 h-1.5 bg-slate-400 rounded-full"></span> Free to use</li>
           </ul>
         </div>
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
-          <h3 class="font-semibold mb-1">Google Family Link</h3>
-          <p class="text-slate-300 mb-2">
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 group">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="font-bold text-slate-900 text-lg">Google Family Link</h3>
+            <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-[10px] font-bold uppercase rounded-md">Android</span>
+          </div>
+          <p class="text-sm text-slate-500 mb-4 leading-relaxed">
             Tracks Android devices, shows location, and lets you lock a device remotely.
           </p>
-          <ul class="text-xs text-slate-400 list-disc list-inside">
-            <li>Free from Google</li>
-            <li>Integrated with Play Store</li>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li class="flex gap-2 items-center"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> Integrated with Play Store</li>
+            <li class="flex gap-2 items-center"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> Remote device locking</li>
+            <li class="flex gap-2 items-center"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> Free from Google</li>
           </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 md:px-6 mb-20">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="h-px bg-slate-200 flex-1"></div>
+        <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <span class="text-2xl">⏳</span> Screen Time & Apps
+        </h2>
+        <div class="h-px bg-slate-200 flex-1"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row gap-6 items-start">
+          <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-2xl flex-shrink-0">🍏</div>
+          <div>
+            <h3 class="font-bold text-slate-900 text-lg mb-2">Apple Screen Time</h3>
+            <p class="text-sm text-slate-500 mb-4">
+              Built into iPhones, iPads, and Macs. Lets you see how long each app is used, set daily limits, and approve or deny new apps.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-600 text-xs font-medium">Ask to Buy</span>
+              <span class="px-2.5 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-600 text-xs font-medium">Downtime Schedules</span>
+              <span class="px-2.5 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-600 text-xs font-medium">Content Restrictions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row gap-6 items-start">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-2xl flex-shrink-0">🤖</div>
+          <div>
+            <h3 class="font-bold text-slate-900 text-lg mb-2">Google Family Link</h3>
+            <p class="text-sm text-slate-500 mb-4">
+              For Android and Chromebook. Shows screen time, lets you set limits, approve apps, and lock devices instantly.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-600 text-xs font-medium">Per-app Limits</span>
+              <span class="px-2.5 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-600 text-xs font-medium">Bedtime Mode</span>
+              <span class="px-2.5 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-600 text-xs font-medium">Activity Reports</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 md:px-6 mb-16">
+      <div class="bg-slate-900 rounded-[2rem] p-8 md:p-12 text-center md:text-left relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-slate-800 rounded-full blur-3xl opacity-50"></div>
+        
+        <div class="relative z-10 mb-10">
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Text & Social Media Monitoring</h2>
+          <p class="text-slate-300 max-w-2xl leading-relaxed">
+            Some tools go beyond simple filtering and can scan texts, DMs, and social media posts for signs of bullying, self-harm, and predators.
+            Instead of reading everything, you get <strong>alerts when something looks serious.</strong>
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 relative z-10">
+          
+          <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/15 transition flex flex-col">
+            <h3 class="font-bold text-white text-lg mb-2 flex items-center gap-2">
+              Bark <span class="text-xs bg-brand-600 text-white px-2 py-0.5 rounded-full">Recommended</span>
+            </h3>
+            <p class="text-sm text-indigo-100 mb-4 flex-1">
+              Monitors texts, email, YouTube, and 30+ apps using AI. Sends alerts with context and expert guidance.
+            </p>
+            <a href="https://barkparentalcontrols.pxf.io/c/6728159/1430413/17000?adname=affiliate_home_page" target="_blank" class="inline-flex items-center text-sm font-bold text-sky-300 hover:text-white transition-colors">
+              Learn more about Bark &rarr;
+            </a>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/15 transition flex flex-col">
+            <h3 class="font-bold text-white text-lg mb-2">Qustodio</h3>
+            <p class="text-sm text-indigo-100 mb-4 flex-1">
+              Tracks calls and SMS (Android only), plus web and app activity for a clear picture of usage.
+            </p>
+            <a href="#" class="inline-flex items-center text-sm font-bold text-sky-300 hover:text-white transition-colors">
+              Check Qustodio features &rarr;
+            </a>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/15 transition flex flex-col">
+            <h3 class="font-bold text-white text-lg mb-2">WebWatcher</h3>
+            <p class="text-sm text-indigo-100 mb-4 flex-1">
+              More intrusive monitoring (screenshots, keystrokes). Best reserved for specific high-risk cases.
+            </p>
+            <a href="#" class="inline-flex items-center text-sm font-bold text-sky-300 hover:text-white transition-colors">
+              See WebWatcher &rarr;
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- SCREEN TIME & APPS -->
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-3">Screen time &amp; app usage</h2>
-      <div class="grid md:grid-cols-2 gap-5 text-sm">
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
-          <h3 class="font-semibold mb-1">Apple Screen Time</h3>
-          <p class="text-slate-300 mb-2">
-            Built into iPhones, iPads, and Macs. Lets you see how long each app is used, set daily limits, and
-            approve or deny new apps.
-          </p>
-          <ul class="text-xs text-slate-400 list-disc list-inside mb-2">
-            <li>“Ask to Buy” for app installs</li>
-            <li>Downtime for sleep hours</li>
-            <li>Content restrictions (web &amp; media)</li>
-          </ul>
-        </div>
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
-          <h3 class="font-semibold mb-1">Google Family Link</h3>
-          <p class="text-slate-300 mb-2">
-            For Android and Chromebook. Shows screen time, lets you set limits, approve apps, and lock devices.
-          </p>
-          <ul class="text-xs text-slate-400 list-disc list-inside mb-2">
-            <li>Per-app time limits</li>
-            <li>Bedtime schedules</li>
-            <li>Activity reports</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEXT & SOCIAL -->
-    <section>
-      <h2 class="text-xl font-semibold mb-3">Text &amp; social media monitoring</h2>
-      <p class="text-sm text-slate-300 mb-4 max-w-2xl">
-        Some tools go beyond web filtering and can scan texts, DMs, and social-media posts for signs of bullying,
-        self-harm, explicit content, and more. Instead of reading everything yourself, you get <strong>alerts when
-        something looks serious.</strong>
-      </p>
-
-      <div class="grid md:grid-cols-3 gap-5 text-sm">
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 flex flex-col">
-          <h3 class="font-semibold mb-1">Bark</h3>
-          <p class="text-slate-300 mb-2">
-            Monitors texts, email, YouTube, and major social apps using AI. Sends alerts with context and guidance.
-          </p>
-          <ul class="text-xs text-slate-400 list-disc list-inside mb-2">
-            <li>Bullying, self-harm, predators</li>
-            <li>Custom sensitivity settings</li>
-          </ul>
-          <a href="https://barkparentalcontrols.pxf.io/c/6728159/1430413/17000?adname=affiliate_home_page"
-             class="mt-auto text-indigo-300 text-xs underline">
-            Learn more about Bark
-          </a>
-        </div>
-
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 flex flex-col">
-          <h3 class="font-semibold mb-1">Qustodio</h3>
-          <p class="text-slate-300 mb-2">
-            Tracks calls and texts on some platforms, plus web and app activity, giving you a clear picture of usage.
-          </p>
-          <ul class="text-xs text-slate-400 list-disc list-inside mb-2">
-            <li>Call &amp; SMS monitoring (Android)</li>
-            <li>Social and web activity reports</li>
-          </ul>
-          <a href="#" class="mt-auto text-indigo-300 text-xs underline">
-            Check Qustodio features
-          </a>
-        </div>
-
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 flex flex-col">
-          <h3 class="font-semibold mb-1">WebWatcher</h3>
-          <p class="text-slate-300 mb-2">
-            More intrusive monitoring (screenshots, keystrokes on some platforms). Use with clear family agreements.
-          </p>
-          <ul class="text-xs text-slate-400 list-disc list-inside mb-2">
-            <li>Advanced monitoring</li>
-            <li>Best for specific high-risk cases</li>
-          </ul>
-          <a href="#" class="mt-auto text-indigo-300 text-xs underline">
-            See WebWatcher
-          </a>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="border-t border-slate-800 py-6 text-xs text-slate-500 mt-10">
-    <div class="max-w-6xl mx-auto px-4 flex justify-between">
-      <p>© <span id="year"></span> Kids Home Safe.</p>
-      <a href="index.html" class="hover:text-indigo-300">Back to home</a>
+  <footer class="bg-white border-t border-slate-200 py-12">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      
+      <div class="flex flex-col gap-2">
+         <a href="index.html" class="flex items-center gap-2 group">
+             <img src="assets/logo.png" alt="Kids Home Safe Logo" class="h-8 w-8 object-contain grayscale group-hover:grayscale-0 transition" />
+             <span class="font-bold text-slate-900 text-lg">Kids Home Safe</span>
+         </a>
+         <p class="text-sm text-slate-500 mt-2">© <span id="year"></span> Kids Home Safe. <br class="md:hidden">Protecting families in Kansas City & beyond.</p>
+      </div>
+
+      <div class="flex gap-8 text-sm font-medium text-slate-600">
+        <a href="index.html" class="hover:text-brand-600 transition-colors">Back to home</a>
+        <a href="services.html#contact" class="hover:text-brand-600 transition-colors">Contact</a>
+        <a href="#" class="hover:text-brand-600 transition-colors">Privacy Policy</a>
+      </div>
     </div>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>

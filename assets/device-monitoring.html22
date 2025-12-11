@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Monitor Phones, Location & Apps – Kids Home Safe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Learn how to track your child’s phone location, manage screen time, and monitor apps using Apple Screen Time, Google Family Link, Bark, Life360 and more." />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-30">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Kids Home Safe Logo" class="h-10 w-10 object-contain" />
+        <span class="font-semibold text-lg">Kids Home Safe</span>
+      </a>
+      <div class="flex items-center gap-8 text-sm font-medium">
+        <a href="filters.html" class="hover:text-indigo-300">Web Filters</a>
+        <a href="safe.html" class="hover:text-indigo-300">Safe Browsing</a>
+        <a href="device-monitoring.html" class="text-indigo-300 font-semibold">Phones &amp; Apps</a>
+        <a href="services.html" class="hover:text-indigo-300">Home Setup</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 pt-10 pb-16">
+    <h1 class="text-2xl md:text-3xl font-semibold mb-2">Monitor phones, locations &amp; apps</h1>
+    <p class="text-sm text-slate-300 mb-8 max-w-2xl">
+      You don’t need to read every single message your child sends. Instead, set up tools that
+      <strong>track screen time, app usage, and location</strong>, and send alerts when something looks wrong.
+    </p>
+
+    <!-- LOCATION -->
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">Location tracking</h2>
+      <div class="grid md:grid-cols-3 gap-5 text-sm">
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
+          <h3 class="font-semibold mb-1">Life360</h3>
+          <p class="text-slate-300 mb-2">
+            Family-location app that shows where everyone is, with driving stats and geofence alerts.
+          </p>
+          <ul class="text-xs text-slate-400 list-disc list-inside">
+            <li>Real-time map</li>
+            <li>Arrival &amp; departure alerts</li>
+            <li>Driving behavior reports</li>
+          </ul>
+        </div>
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
+          <h3 class="font-semibold mb-1">Apple Find My</h3>
+          <p class="text-slate-300 mb-2">
+            Built into iPhones. Lets you see where your kid’s device is at any time, and play a sound if it’s lost.
+          </p>
+          <ul class="text-xs text-slate-400 list-disc list-inside">
+            <li>Use the “Family Sharing” feature</li>
+            <li>Great for Apple households</li>
+          </ul>
+        </div>
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
+          <h3 class="font-semibold mb-1">Google Family Link</h3>
+          <p class="text-slate-300 mb-2">
+            Tracks Android devices, shows location, and lets you lock a device remotely.
+          </p>
+          <ul class="text-xs text-slate-400 list-disc list-inside">
+            <li>Free from Google</li>
+            <li>Integrated with Play Store</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN TIME & APPS -->
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">Screen time &amp; app usage</h2>
+      <div class="grid md:grid-cols-2 gap-5 text-sm">
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
+          <h3 class="font-semibold mb-1">Apple Screen Time</h3>
+          <p class="text-slate-300 mb-2">
+            Built into iPhones, iPads, and Macs. Lets you see how long each app is used, set daily limits, and
+            approve or deny new apps.
+          </p>
+          <ul class="text-xs text-slate-400 list-disc list-inside mb-2">
+            <li>“Ask to Buy” for app installs</li>
+            <li>Downtime for sleep hours</li>
+            <li>Content restrictions (web &amp; media)</li>
+          </ul>
+        </div>
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
+          <h3 class="font-semibold mb-1">Google Family Link</h3>
+          <p class="text-slate-300 mb-2">
+            For Android and Chromebook. Shows screen time, lets you set limits, approve apps, and lock devices.
+          </p>
+          <ul class="text-xs text-slate-400 list-disc list-inside mb-2">
+            <li>Per-app time limits</li>
+            <li>Bedtime schedules</li>
+            <li>Activity reports</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEXT & SOCIAL -->
+    <section>
+      <h2 class="text-xl font-semibold mb-3">Text &amp; social media monitoring</h2>
+      <p class="text-sm text-slate-300 mb-4 max-w-2xl">
+        Some tools go beyond web filtering and can scan texts, DMs, and social-media posts for signs of bullying,
+        self-harm, explicit content, and more. Instead of reading everything yourself, you get <strong>alerts when
+        something looks serious.</strong>
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-5 text-sm">
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 flex flex-col">
+          <h3 class="font-semibold mb-1">Bark</h3>
+          <p class="text-slate-300 mb-2">
+            Monitors texts, email, YouTube, and major social apps using AI. Sends alerts with context and guidance.
+          </p>
+          <ul class="text-xs text-slate-400 list-disc list-inside mb-2">
+            <li>Bullying, self-harm, predators</li>
+            <li>Custom sensitivity settings</li>
+          </ul>
+          <a href="https://barkparentalcontrols.pxf.io/c/6728159/1430413/17000?adname=affiliate_home_page"
+             class="mt-auto text-indigo-300 text-xs underline">
+            Learn more about Bark
+          </a>
+        </div>
+
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 flex flex-col">
+          <h3 class="font-semibold mb-1">Qustodio</h3>
+          <p class="text-slate-300 mb-2">
+            Tracks calls and texts on some platforms, plus web and app activity, giving you a clear picture of usage.
+          </p>
+          <ul class="text-xs text-slate-400 list-disc list-inside mb-2">
+            <li>Call &amp; SMS monitoring (Android)</li>
+            <li>Social and web activity reports</li>
+          </ul>
+          <a href="#" class="mt-auto text-indigo-300 text-xs underline">
+            Check Qustodio features
+          </a>
+        </div>
+
+        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 flex flex-col">
+          <h3 class="font-semibold mb-1">WebWatcher</h3>
+          <p class="text-slate-300 mb-2">
+            More intrusive monitoring (screenshots, keystrokes on some platforms). Use with clear family agreements.
+          </p>
+          <ul class="text-xs text-slate-400 list-disc list-inside mb-2">
+            <li>Advanced monitoring</li>
+            <li>Best for specific high-risk cases</li>
+          </ul>
+          <a href="#" class="mt-auto text-indigo-300 text-xs underline">
+            See WebWatcher
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800 py-6 text-xs text-slate-500 mt-10">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between">
+      <p>© <span id="year"></span> Kids Home Safe.</p>
+      <a href="index.html" class="hover:text-indigo-300">Back to home</a>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>

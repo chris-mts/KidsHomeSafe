@@ -1,157 +1,309 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <title>Web Filters & DNS Protection – Kids Home Safe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Compare free and paid web filters for families, including CleanBrowsing, OpenDNS, Cloudflare, Bark, Qustodio, and Net Nanny – with practical setup tips." />
+  <meta name="description" content="Compare free and paid web filters for families. Get setup IPs for CleanBrowsing, OpenDNS, and Cloudflare, plus reviews of Bark and Qustodio." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6', // Trust Blue
+              600: '#2563eb',
+              900: '#1e3a8a',
+            },
+            accent: {
+              500: '#10b981', // Safety Green
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .mobile-menu {
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+    .mobile-menu.hidden {
+      display: none;
+    }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100">
-  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-30">
-    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
+<body class="bg-slate-50 text-slate-700 font-sans antialiased selection:bg-brand-100 selection:text-brand-900">
+
+  <header class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-slate-200 z-50">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 group">
         <img src="assets/logo.png" alt="Kids Home Safe Logo" class="h-10 w-10 object-contain" />
-        <span class="font-semibold text-lg">Kids Home Safe</span>
+        <span class="font-bold text-slate-900 text-lg tracking-tight">Kids Home Safe</span>
       </a>
 
-      <div class="flex items-center gap-8 text-sm font-medium">
-        <a href="filters.html" class="text-indigo-300 font-semibold">Web Filters</a>
-        <a href="safe.html" class="hover:text-indigo-300">Safe Browsing</a>
-        <a href="device-monitoring.html" class="hover:text-indigo-300">Phones &amp; Apps</a>
-        <a href="services.html" class="hover:text-indigo-300">Home Setup</a>
-      </div>
-    </nav>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="filters.html" class="text-brand-600 font-semibold">Web Filters</a>
+        <a href="safe.html" class="hover:text-brand-600 transition-colors">Safe Browsing</a>
+        <a href="device-monitoring.html" class="hover:text-brand-600 transition-colors">Phones & Apps</a>
+        <a href="services.html" class="hover:text-brand-600 transition-colors">Home Setup</a>
+        <a href="services.html#contact" class="px-4 py-2 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition shadow-sm">
+          Book a Visit
+        </a>
+      </nav>
+
+      <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 focus:outline-none" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-white border-b border-slate-200 p-4 shadow-xl md:hidden flex flex-col gap-4 text-center">
+      <a href="filters.html" class="block py-2 text-brand-600 font-semibold">Web Filters</a>
+      <a href="safe.html" class="block py-2 text-slate-600 font-medium">Safe Browsing</a>
+      <a href="device-monitoring.html" class="block py-2 text-slate-600 font-medium">Phones & Apps</a>
+      <a href="services.html" class="block py-2 text-slate-600 font-medium">Home Setup</a>
+      <a href="services.html#contact" class="block py-3 bg-brand-50 text-brand-700 font-semibold rounded-xl">Book a Visit</a>
+    </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 pt-10 pb-16">
-    <h1 class="text-2xl md:text-3xl font-semibold mb-2">Web filters for families</h1>
-    <p class="text-sm text-slate-300 mb-8 max-w-2xl">
-      These tools help you block adult content, malware, and other harmful sites before they ever load.
-      Start with a <strong>free DNS filter</strong>, then add a <strong>paid parental-control app</strong> if you want deeper monitoring.
-    </p>
+  <main class="pt-24 md:pt-32 pb-16 md:pb-24">
+    
+    <section class="max-w-4xl mx-auto px-4 md:px-6 text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-600 text-xs font-bold uppercase tracking-wide mb-4">
+        First Line of Defense
+      </div>
+      <h1 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
+        Web filters for families
+      </h1>
+      <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+        These tools help you block adult content, malware, and other harmful sites before they ever load.
+        We recommend starting with a <strong>free DNS filter</strong>, then adding a <strong>paid parental-control app</strong> if you want deeper monitoring.
+      </p>
+    </section>
 
-    <!-- FREE FILTERS -->
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-3">Free filters (DNS-level protection)</h2>
-      <div class="grid md:grid-cols-3 gap-5 text-sm">
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
-          <h3 class="font-semibold mb-1">CleanBrowsing – Family Filter</h3>
-          <p class="text-slate-300 mb-2">Blocks adult content, malware, phishing, VPN/proxy bypass sites, and more.</p>
-          <ul class="text-xs text-slate-400 list-disc list-inside mb-3">
-            <li>Works on routers, phones, computers</li>
-            <li>Fast and family-friendly defaults</li>
-          </ul>
-          <a href="https://cleanbrowsing.org/filters/" target="_blank" class="text-indigo-300 text-xs underline">Open CleanBrowsing</a>
+    <section class="max-w-6xl mx-auto px-4 md:px-6 mb-20">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="h-px bg-slate-200 flex-1"></div>
+        <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <span class="text-2xl">🌐</span> Free Filters (DNS)
+        </h2>
+        <div class="h-px bg-slate-200 flex-1"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 group">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="font-bold text-slate-900 text-lg">CleanBrowsing</h3>
+            <span class="px-2 py-1 bg-purple-100 text-purple-700 text-[10px] font-bold uppercase rounded-md">Top Pick</span>
+          </div>
+          <p class="text-sm text-slate-500 mb-4 leading-relaxed">
+            Blocks adult content, malware, phishing, and VPN bypass sites.
+          </p>
+          <div class="bg-slate-100 rounded-lg p-3 mb-4 font-mono text-xs text-slate-600 border border-slate-200">
+            <div class="flex justify-between"><span class="font-bold">Primary:</span> 185.228.168.168</div>
+            <div class="flex justify-between"><span class="font-bold">Alt:</span> 185.228.169.168</div>
+          </div>
+          <a href="https://cleanbrowsing.org/filters/" target="_blank" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Setup Guide &rarr;
+          </a>
         </div>
 
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
-          <h3 class="font-semibold mb-1">Cloudflare Family DNS</h3>
-          <p class="text-slate-300 mb-2">A fast DNS service that blocks malware and adult content using Cloudflare’s network.</p>
-          <ul class="text-xs text-slate-400 list-disc list-inside mb-3">
-            <li>1.1.1.3 / 1.0.0.3 (malware & adult)</li>
-            <li>Good for whole-home protection</li>
-          </ul>
-          <a href="https://developers.cloudflare.com/1.1.1.1/setup/" target="_blank" class="text-indigo-300 text-xs underline">Cloudflare Family setup</a>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 group">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="font-bold text-slate-900 text-lg">Cloudflare Family</h3>
+            <span class="px-2 py-1 bg-orange-100 text-orange-700 text-[10px] font-bold uppercase rounded-md">Fastest</span>
+          </div>
+          <p class="text-sm text-slate-500 mb-4 leading-relaxed">
+            Blocks malware and adult content using Cloudflare’s fast global network.
+          </p>
+          <div class="bg-slate-100 rounded-lg p-3 mb-4 font-mono text-xs text-slate-600 border border-slate-200">
+            <div class="flex justify-between"><span class="font-bold">Primary:</span> 1.1.1.3</div>
+            <div class="flex justify-between"><span class="font-bold">Alt:</span> 1.0.0.3</div>
+          </div>
+          <a href="https://developers.cloudflare.com/1.1.1.1/setup/" target="_blank" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Setup Guide &rarr;
+          </a>
         </div>
 
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4">
-          <h3 class="font-semibold mb-1">OpenDNS FamilyShield</h3>
-          <p class="text-slate-300 mb-2">Cisco-owned DNS service with automatic adult-content blocking.</p>
-          <ul class="text-xs text-slate-400 list-disc list-inside mb-3">
-            <li>Pre-configured family DNS servers</li>
-            <li>Easy to use on most routers</li>
-          </ul>
-          <a href="https://www.opendns.com/setupguide/" target="_blank" class="text-indigo-300 text-xs underline">OpenDNS setup guide</a>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 group">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="font-bold text-slate-900 text-lg">OpenDNS Family</h3>
+            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase rounded-md">Classic</span>
+          </div>
+          <p class="text-sm text-slate-500 mb-4 leading-relaxed">
+            Cisco-owned service. Pre-configured to block adult content automatically.
+          </p>
+          <div class="bg-slate-100 rounded-lg p-3 mb-4 font-mono text-xs text-slate-600 border border-slate-200">
+            <div class="flex justify-between"><span class="font-bold">Primary:</span> 208.67.222.123</div>
+            <div class="flex justify-between"><span class="font-bold">Alt:</span> 208.67.220.123</div>
+          </div>
+          <a href="https://www.opendns.com/setupguide/" target="_blank" class="inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+            Setup Guide &rarr;
+          </a>
         </div>
+
       </div>
     </section>
 
-    <!-- PAID FILTERS -->
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-3">Paid parental-control apps</h2>
-      <p class="text-sm text-slate-300 mb-4 max-w-2xl">
-        DNS filtering is great for blocking websites, but it can’t see inside apps like TikTok, Snapchat, or Instagram.
+    <section class="max-w-6xl mx-auto px-4 md:px-6 mb-20">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="h-px bg-slate-200 flex-1"></div>
+        <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <span class="text-2xl">📱</span> Paid Parental Apps
+        </h2>
+        <div class="h-px bg-slate-200 flex-1"></div>
+      </div>
+      
+      <p class="text-center text-slate-500 mb-10 max-w-xl mx-auto">
+        DNS filtering blocks websites, but it can’t see inside apps like TikTok or Instagram. 
         These tools add <strong>app-level monitoring, alerts, and screen-time controls.</strong>
       </p>
 
-      <div class="grid md:grid-cols-3 gap-5 text-sm">
-
-        <!-- Bark -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 flex flex-col text-center">
-          <h3 class="font-semibold mb-1">Bark</h3>
-          <img src="assets/bark-banner.jpeg" alt="Bark banner" class="mx-auto w-64 md:w-72 lg:w-80 rounded-xl mb-4">
-          <p class="text-slate-300 mb-2">
-            AI-powered monitoring for texts, social media, YouTube, and more.
-            Sends alerts when it detects bullying, self-harm, violence, or explicit content.
-          </p>
-          <ul class="text-xs text-slate-400 list-disc list-inside mb-3 text-left mx-auto">
-            <li>Monitors 30+ platforms</li>
-            <li>Location check-ins & alerts</li>
-          </ul>
-          <a href="https://barkparentalcontrols.pxf.io/c/6728159/1430413/17000?adname=affiliate_home_page"
-             class="mt-4 text-indigo-300 text-sm font-semibold underline text-center block">
-            Try Bark
-          </a>
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="bg-slate-100 p-6 flex items-center justify-center">
+             <img src="assets/bark-banner.jpeg" alt="Bark Dashboard" class="h-32 object-contain hover:scale-105 transition-transform" />
+          </div>
+          
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-bold text-slate-900 text-xl mb-2">Bark</h3>
+            <p class="text-sm text-slate-500 mb-4 flex-1">
+              AI-powered monitoring for texts, social media, and YouTube. Sends alerts for bullying, self-harm, or explicit content.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-600 mb-6">
+              <li class="flex gap-2 items-center"><span class="text-accent-500">✓</span> Monitors 30+ platforms</li>
+              <li class="flex gap-2 items-center"><span class="text-accent-500">✓</span> Alerts with context</li>
+            </ul>
+            <a href="https://barkparentalcontrols.pxf.io/c/6728159/1430413/17000?adname=affiliate_home_page" class="w-full text-center py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold transition-colors">
+              Try Bark
+            </a>
+          </div>
         </div>
 
-        <!-- Qustodio -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 flex flex-col text-center">
-          <h3 class="font-semibold mb-1">Qustodio</h3>
-          <img src="assets/Quos.png" alt="Qustodio" class="mx-auto w-64 md:w-72 lg:w-80 rounded-xl mb-4">
-          <p class="text-slate-300 mb-2">
-            A balanced parental-control suite: web filtering, app blocking, screen-time limits, and location tracking.
-          </p>
-          <ul class="text-xs text-slate-400 list-disc list-inside mb-3 text-left mx-auto">
-            <li>Great dashboards</li>
-            <li>Works on phones & computers</li>
-          </ul>
-          <a href="https://www.qustodio.com/en/"
-             class="mt-4 text-indigo-300 text-sm font-semibold underline text-center block">
-            View Qustodio plans
-          </a>
+        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="bg-slate-100 p-6 flex items-center justify-center">
+             <img src="assets/Quos.png" alt="Qustodio Dashboard" class="h-32 object-contain hover:scale-105 transition-transform" />
+          </div>
+          
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-bold text-slate-900 text-xl mb-2">Qustodio</h3>
+            <p class="text-sm text-slate-500 mb-4 flex-1">
+              Balanced suite with web filtering, app blocking, screen-time limits, and location tracking in one dashboard.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-600 mb-6">
+              <li class="flex gap-2 items-center"><span class="text-accent-500">✓</span> Great activity timeline</li>
+              <li class="flex gap-2 items-center"><span class="text-accent-500">✓</span> Cross-platform limits</li>
+            </ul>
+            <a href="https://www.qustodio.com/en/" class="w-full text-center py-3 rounded-xl border border-slate-200 hover:border-brand-500 text-slate-700 hover:text-brand-600 font-bold transition-colors">
+              View Plans
+            </a>
+          </div>
         </div>
 
-        <!-- Net Nanny -->
-        <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-4 flex flex-col text-center">
-          <h3 class="font-semibold mb-1">Net Nanny</h3>
-          <img src="assets/net-nanny.jpeg" alt="Net Nanny" class="mx-auto w-64 md:w-72 lg:w-80 rounded-xl mb-4">
-          <p class="text-slate-300 mb-2">
-            Real-time content analysis that can filter out dangerous content inside web pages and apps.
-          </p>
-          <ul class="text-xs text-slate-400 list-disc list-inside mb-3 text-left mx-auto">
-            <li>Strong content filtering</li>
-            <li>Screen-time tools and alerts</li>
-          </ul>
-          <a href="https://www.netnanny.com/"
-             class="mt-4 text-indigo-300 text-sm font-semibold underline text-center block">
-            Explore Net Nanny
-          </a>
+        <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="bg-slate-100 p-6 flex items-center justify-center">
+             <img src="assets/net-nanny.jpeg" alt="Net Nanny Logo" class="h-32 object-contain hover:scale-105 transition-transform" />
+          </div>
+          
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="font-bold text-slate-900 text-xl mb-2">Net Nanny</h3>
+            <p class="text-sm text-slate-500 mb-4 flex-1">
+              Uses real-time content analysis to filter out dangerous content inside web pages—not just blocking URL lists.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-600 mb-6">
+              <li class="flex gap-2 items-center"><span class="text-accent-500">✓</span> Dynamic filtering</li>
+              <li class="flex gap-2 items-center"><span class="text-accent-500">✓</span> Screen time controls</li>
+            </ul>
+            <a href="https://www.netnanny.com/" class="w-full text-center py-3 rounded-xl border border-slate-200 hover:border-brand-500 text-slate-700 hover:text-brand-600 font-bold transition-colors">
+              Explore Net Nanny
+            </a>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- SIMPLE HOW-TO -->
-    <section>
-      <h2 class="text-xl font-semibold mb-3">The simple strategy</h2>
-      <ol class="list-decimal list-inside text-sm text-slate-300 space-y-2 max-w-2xl">
-        <li>Turn on <strong>Google SafeSearch</strong> and <strong>YouTube Restricted Mode</strong> on every kid device.</li>
-        <li>Configure a <strong>free DNS filter</strong> on your router so the whole house is protected.</li>
-        <li>Add a <strong>paid parental-control app</strong> on each kid’s phone or tablet for app-level monitoring.</li>
-        <li>Use <strong>Apple Screen Time or Google Family Link</strong> to control app installs and screen time.</li>
-      </ol>
+    <section class="max-w-4xl mx-auto px-4 md:px-6 mb-20">
+      <div class="bg-brand-50 border border-brand-100 rounded-2xl p-8 md:p-10">
+        <h2 class="text-xl font-bold text-slate-900 mb-6">The Simple Strategy</h2>
+        <ol class="space-y-4">
+          <li class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-200 text-brand-700 flex items-center justify-center font-bold text-sm">1</span>
+            <p class="text-slate-700 text-sm md:text-base pt-1">
+              Turn on <strong>Google SafeSearch</strong> and <strong>YouTube Restricted Mode</strong> on every kid device.
+            </p>
+          </li>
+          <li class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-200 text-brand-700 flex items-center justify-center font-bold text-sm">2</span>
+            <p class="text-slate-700 text-sm md:text-base pt-1">
+              Configure a <strong>free DNS filter</strong> (like CleanBrowsing) on your router so the whole house is protected.
+            </p>
+          </li>
+          <li class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-200 text-brand-700 flex items-center justify-center font-bold text-sm">3</span>
+            <p class="text-slate-700 text-sm md:text-base pt-1">
+              Add a <strong>paid parental-control app</strong> (like Bark) on each kid’s phone for detailed monitoring.
+            </p>
+          </li>
+          <li class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-200 text-brand-700 flex items-center justify-center font-bold text-sm">4</span>
+            <p class="text-slate-700 text-sm md:text-base pt-1">
+              Use <strong>Apple Screen Time</strong> or <strong>Google Family Link</strong> to control app installs and downtime.
+            </p>
+          </li>
+        </ol>
+      </div>
     </section>
+
   </main>
 
-  <footer class="border-t border-slate-800 py-6 text-xs text-slate-500 mt-10">
-    <div class="max-w-6xl mx-auto px-4 flex justify-between">
-      <p>© <span id="year"></span> Kids Home Safe.</p>
-      <a href="index.html" class="hover:text-indigo-300">Back to home</a>
+  <footer class="bg-white border-t border-slate-200 py-12">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      
+      <div class="flex flex-col gap-2">
+         <a href="index.html" class="flex items-center gap-2 group">
+             <img src="assets/logo.png" alt="Kids Home Safe Logo" class="h-8 w-8 object-contain grayscale group-hover:grayscale-0 transition" />
+             <span class="font-bold text-slate-900 text-lg">Kids Home Safe</span>
+         </a>
+         <p class="text-sm text-slate-500 mt-2">© <span id="year"></span> Kids Home Safe. <br class="md:hidden">Protecting families in Kansas City & beyond.</p>
+      </div>
+
+      <div class="flex gap-8 text-sm font-medium text-slate-600">
+        <a href="index.html" class="hover:text-brand-600 transition-colors">Back to home</a>
+        <a href="services.html#contact" class="hover:text-brand-600 transition-colors">Contact</a>
+        <a href="#" class="hover:text-brand-600 transition-colors">Privacy Policy</a>
+      </div>
     </div>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
